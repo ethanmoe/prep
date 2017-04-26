@@ -19,12 +19,31 @@ namespace code.prep.movies
 
     public void add(Movie movie)
     {
-      movies.Add(movie);
+            
+            for (int i = 0; i < this.movies.Count; i++)
+            {
+                if (this.movies[i].title != movie.title)
+                {
+                    movies.Add(movie);
+                }
+
+            }
+          
+            
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
-      throw new NotImplementedException();
+            List<Movie> c = new List<Movie>();
+            for (int i = 0; i < this.movies.Count; i++)
+            {
+                if (this.movies[i].title != movie.title)
+                {
+                    movies.Add(movie);
+                }
+
+            }
+            throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
@@ -39,7 +58,17 @@ namespace code.prep.movies
 
     public IEnumerable<Movie> all_movies_published_after(int year)
     {
-      throw new NotImplementedException();
+            List<Movie> c = new List<Movie>();
+            for (int i = 0; i < this.movies.Count; i++)
+            {
+                if (this.movies[i].date_published.Year > year)
+                {
+                    c.Add(this.movies[i]);
+                }
+
+            }
+            return c;
+            //throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_between_years(int startingYear, int endingYear)
